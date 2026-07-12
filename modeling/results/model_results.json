@@ -1,0 +1,293 @@
+[
+  {
+    "model": "Linear Regression",
+    "train_r2": 0.8341604001570734,
+    "test_r2": 0.8962625633968286,
+    "train_rmse": 4939.503750502309,
+    "test_rmse": 3867.0821852061745,
+    "train_mae": 3004.3592834259125,
+    "test_mae": 2548.33047207072,
+    "overfit_gap_r2": -0.06210216323975526,
+    "best_params": {},
+    "scaled_input": true,
+    "note": "OLS on scaled features; baseline"
+  },
+  {
+    "model": "Ridge Regression",
+    "train_r2": 0.8340738801365242,
+    "test_r2": 0.8974532374352537,
+    "train_rmse": 4940.792074403123,
+    "test_rmse": 3844.8254038543814,
+    "train_mae": 3006.6953564855817,
+    "test_mae": 2534.401754172063,
+    "overfit_gap_r2": -0.06337935729872957,
+    "best_params": {
+      "alpha": 1
+    },
+    "scaled_input": "pipeline",
+    "note": "Pipeline(StandardScaler+Ridge), 5-fold GridSearchCV"
+  },
+  {
+    "model": "Lasso Regression",
+    "train_r2": 0.8339773980571658,
+    "test_r2": 0.8978582059516951,
+    "train_rmse": 4942.228341991481,
+    "test_rmse": 3837.226073228069,
+    "train_mae": 3005.721113432279,
+    "test_mae": 2526.1119780318572,
+    "overfit_gap_r2": -0.06388080789452932,
+    "best_params": {
+      "alpha": 10
+    },
+    "scaled_input": "pipeline",
+    "note": "Pipeline(StandardScaler+Lasso), 5-fold GridSearchCV"
+  },
+  {
+    "model": "Elastic-Net",
+    "train_r2": 0.834080083099015,
+    "test_r2": 0.8974131837130193,
+    "train_rmse": 4940.699720545954,
+    "test_rmse": 3845.5762053920644,
+    "train_mae": 3006.4471348454435,
+    "test_mae": 2534.9029039774064,
+    "overfit_gap_r2": -0.06333310061400421,
+    "best_params": {
+      "alpha": 0.001,
+      "l1_ratio": 0.1
+    },
+    "scaled_input": "pipeline",
+    "note": "Pipeline(StandardScaler+ElasticNet), 5-fold GridSearchCV"
+  },
+  {
+    "model": "Polynomial Regression (deg 2)",
+    "train_r2": 0.8352892310249822,
+    "test_r2": 0.892121704685785,
+    "train_rmse": 4922.664029656003,
+    "test_rmse": 3943.50761229634,
+    "train_mae": 2997.675560607539,
+    "test_mae": 2622.8923262000103,
+    "overfit_gap_r2": -0.056832473660802796,
+    "best_params": {
+      "degree": 2,
+      "raw_features": 8,
+      "poly_features": 44
+    },
+    "scaled_input": "pipeline",
+    "note": "PolynomialFeatures(2)+StandardScaler+LinearRegression on raw encoded features"
+  },
+  {
+    "model": "Decision Tree",
+    "train_r2": 0.8610665604709342,
+    "test_r2": 0.8938722169231399,
+    "train_rmse": 4521.084172481831,
+    "test_rmse": 3911.381632849007,
+    "train_mae": 2670.3830691574753,
+    "test_mae": 2342.997868433826,
+    "overfit_gap_r2": -0.03280565645220568,
+    "best_params": {
+      "max_depth": 5,
+      "min_samples_leaf": 4,
+      "min_samples_split": 2
+    },
+    "scaled_input": false,
+    "note": "GridSearchCV 5-fold; unscaled"
+  },
+  {
+    "model": "Random Forest",
+    "train_r2": 0.8720689721432011,
+    "test_r2": 0.9179032525340997,
+    "train_rmse": 4338.375546890158,
+    "test_rmse": 3440.159840033095,
+    "train_mae": 2466.981879158602,
+    "test_mae": 2149.8772555459327,
+    "overfit_gap_r2": -0.04583428039089854,
+    "best_params": {
+      "max_depth": 5,
+      "min_samples_split": 10,
+      "n_estimators": 100
+    },
+    "scaled_input": false,
+    "note": "GridSearchCV 5-fold; unscaled"
+  },
+  {
+    "model": "Gradient Boosting",
+    "train_r2": 0.8816448932627077,
+    "test_r2": 0.9196076047481072,
+    "train_rmse": 4172.849289871195,
+    "test_rmse": 3404.2632003007293,
+    "train_mae": 2373.2649510029173,
+    "test_mae": 2108.498984934204,
+    "overfit_gap_r2": -0.037962711485399536,
+    "best_params": {
+      "learning_rate": 0.1,
+      "max_depth": 3,
+      "n_estimators": 50
+    },
+    "scaled_input": false,
+    "note": "GridSearchCV 5-fold; unscaled"
+  },
+  {
+    "model": "XGBoost",
+    "train_r2": 0.8755865247215129,
+    "test_r2": 0.9187490260266737,
+    "train_rmse": 4278.316501694534,
+    "test_rmse": 3422.39343197025,
+    "train_mae": 2399.8892323925106,
+    "test_mae": 2105.5852645834307,
+    "overfit_gap_r2": -0.04316250130516086,
+    "best_params": {
+      "colsample_bytree": 0.8,
+      "learning_rate": 0.1,
+      "max_depth": 3,
+      "n_estimators": 50,
+      "subsample": 0.8
+    },
+    "scaled_input": false,
+    "note": "GridSearchCV 5-fold; unscaled"
+  },
+  {
+    "model": "SVR",
+    "train_r2": 0.29415600326059066,
+    "test_r2": 0.36247999945346576,
+    "train_rmse": 10190.45467358337,
+    "test_rmse": 9586.55466391706,
+    "train_mae": 5608.884601519123,
+    "test_mae": 5120.316783956007,
+    "overfit_gap_r2": -0.0683239961928751,
+    "best_params": {
+      "C": 100,
+      "epsilon": 0.5,
+      "gamma": 0.01
+    },
+    "scaled_input": "pipeline",
+    "note": "Pipeline(StandardScaler+SVR rbf); target NOT scaled"
+  },
+  {
+    "model": "SVR (target-scaled)",
+    "train_r2": 0.8600596926992163,
+    "test_r2": 0.9236554448032784,
+    "train_rmse": 4537.437025486092,
+    "test_rmse": 3317.452249691916,
+    "train_mae": 2222.791138497518,
+    "test_mae": 1756.0800224180737,
+    "overfit_gap_r2": -0.0635957521040621,
+    "best_params": {
+      "C": 100,
+      "epsilon": 0.1,
+      "gamma": 0.01
+    },
+    "scaled_input": "pipeline",
+    "note": "TransformedTargetRegressor; inputs+target scaled"
+  },
+  {
+    "model": "KNN",
+    "train_r2": 0.9983383342302093,
+    "test_r2": 0.8951798060116686,
+    "train_rmse": 494.43708313188023,
+    "test_rmse": 3887.211093619068,
+    "train_mae": 29.60017904583723,
+    "test_mae": 2403.7293836758613,
+    "overfit_gap_r2": 0.10315852821854077,
+    "best_params": {
+      "n_neighbors": 10,
+      "p": 1,
+      "weights": "distance"
+    },
+    "scaled_input": "pipeline",
+    "note": "Pipeline(StandardScaler+KNN)"
+  },
+  {
+    "model": "Voting (top 3)",
+    "train_r2": 0.8748497987475038,
+    "test_r2": 0.9237429773621253,
+    "train_rmse": 4290.965029165623,
+    "test_rmse": 3315.5498981342466,
+    "train_mae": 2289.1979780623774,
+    "test_mae": 1930.7611964887378,
+    "overfit_gap_r2": -0.0488931786146215,
+    "best_params": {
+      "members": [
+        "SVR (target-scaled)",
+        "Gradient Boosting",
+        "XGBoost"
+      ]
+    },
+    "scaled_input": "mixed",
+    "note": "VotingRegressor of top-3 individual models"
+  },
+  {
+    "model": "Stacking (Linear meta)",
+    "train_r2": 0.8669385786877425,
+    "test_r2": 0.9220439994578291,
+    "train_rmse": 4424.510988063417,
+    "test_rmse": 3352.2810411174173,
+    "train_mae": 2497.644237242194,
+    "test_mae": 2111.72679589531,
+    "overfit_gap_r2": -0.05510542077008662,
+    "best_params": {
+      "base": [
+        "SVR (target-scaled)",
+        "Gradient Boosting",
+        "XGBoost",
+        "Random Forest"
+      ],
+      "meta": "LinearRegression"
+    },
+    "scaled_input": "mixed",
+    "note": "StackingRegressor, 5-fold internal CV"
+  },
+  {
+    "model": "Stacking (XGB meta)",
+    "train_r2": 0.8656360561772206,
+    "test_r2": 0.917008092908967,
+    "train_rmse": 4446.113757368071,
+    "test_rmse": 3458.8642544370828,
+    "train_mae": 2514.9148604447937,
+    "test_mae": 2144.563326195779,
+    "overfit_gap_r2": -0.051372036731746396,
+    "best_params": {
+      "base": [
+        "SVR (target-scaled)",
+        "Gradient Boosting",
+        "XGBoost",
+        "Random Forest"
+      ],
+      "meta": "XGBoost"
+    },
+    "scaled_input": "mixed",
+    "note": "StackingRegressor, XGBoost meta, 5-fold internal CV"
+  },
+  {
+    "model": "MedCost-AdaBoost",
+    "train_r2": 0.7301795611650925,
+    "test_r2": 0.7091334943797634,
+    "train_rmse": 6300.5232870647305,
+    "test_rmse": 6475.338894501229,
+    "train_mae": 5698.9016530140225,
+    "test_mae": 5920.932439497983,
+    "overfit_gap_r2": 0.021046066785329165,
+    "best_params": {
+      "learning_rate": 0.5,
+      "n_estimators": 50,
+      "base": "DecisionTree(max_depth=4)"
+    },
+    "scaled_input": false,
+    "note": "AdaBoost + DT base, GridSearchCV 5-fold"
+  },
+  {
+    "model": "Bagging",
+    "train_r2": 0.938457610256033,
+    "test_r2": 0.8980967396313809,
+    "train_rmse": 3009.0290258244017,
+    "test_rmse": 3832.7428806607486,
+    "train_mae": 1724.2140916922312,
+    "test_mae": 2332.715451156965,
+    "overfit_gap_r2": 0.0403608706246521,
+    "best_params": {
+      "max_samples": 0.5,
+      "n_estimators": 100
+    },
+    "scaled_input": false,
+    "note": "Bagging + DT base, GridSearchCV 5-fold"
+  }
+]
