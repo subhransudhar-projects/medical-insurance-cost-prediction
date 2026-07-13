@@ -1,7 +1,17 @@
 # Medical Insurance Cost Prediction — End-to-End Data Science Project
 
+[![Live Report](https://img.shields.io/badge/📊_Live_Report-View-2A6F6F)](https://subhransudhar-projects.github.io/medical-insurance-cost-prediction/)
+[![CV R2](https://img.shields.io/badge/CV_R²-0.85-2ea44f)](https://subhransudhar-projects.github.io/medical-insurance-cost-prediction/#model)
+[![Models](https://img.shields.io/badge/Models-17-orange)](#model-performance)
+[![Figures](https://img.shields.io/badge/Figures-58%2B-blue)](#key-visualizations)
+[![Explainability](https://img.shields.io/badge/Explainability-SHAP-8957e5)](https://subhransudhar-projects.github.io/medical-insurance-cost-prediction/#shap)
+[![Status](https://img.shields.io/badge/Status-Complete-brightgreen)](#)
+
 Predicting individual annual medical insurance charges from demographic and health
 data, and turning the findings into an actionable, explainable pricing strategy.
+
+> **📊 [View the full visual report →](https://subhransudhar-projects.github.io/medical-insurance-cost-prediction/)** — a
+> chaptered, 25-figure case study (data → findings → model → SHAP → business impact) with click-to-enlarge charts.
 
 > **Headline:** A production **Gradient Boosting** model predicts annual charges with a
 > cross-validated **R² ≈ 0.85** (RMSE ≈ $3,400). The analysis shows **smoking — especially
