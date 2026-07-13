@@ -13,6 +13,11 @@ data, and turning the findings into an actionable, explainable pricing strategy.
 > **📊 [View the full visual report →](https://subhransudhar-projects.github.io/medical-insurance-cost-prediction/)** — a
 > chaptered, 25-figure case study (data → findings → model → SHAP → business impact) with click-to-enlarge charts.
 
+**Three ways to explore this project:**
+- 📊 **[Live visual report](https://subhransudhar-projects.github.io/medical-insurance-cost-prediction/)** — the chaptered case study above, best for a first read
+- 📓 **[Executable notebook](notebooks/00_Complete_Analysis.ipynb)** — a runnable, end-to-end reproduction (loads data → EDA → modeling → SHAP), renders natively on GitHub
+- 🖥️ **[Slide deck](reports/slides.pdf)** — a 12-slide interview-ready summary
+
 > **Headline:** A production **Gradient Boosting** model predicts annual charges with a
 > cross-validated **R² ≈ 0.85** (RMSE ≈ $3,400). The analysis shows **smoking — especially
 > combined with obesity — is by far the dominant cost driver**, while region and sex are not
