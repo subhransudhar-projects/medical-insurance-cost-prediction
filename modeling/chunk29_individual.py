@@ -45,12 +45,21 @@ def waterfall(ax, contribs, predicted, actual, title):
     items = list(top.items())
     if abs(other) > 1:
         items.append(("other features", other))
-    running = base
-    for i, (k, v) in enumerate(items):
-        ax.barh(i, v, left=running, color=(VERMILLION if v > 0 else BLUE), edgecolor="white")
-        ax.text(running + v / 2, i, f"{'+' if v >= 0 else '-'}${abs(v):,.0f}",
-                ha="center", va="center", fontsize=7.5, color="white", fontweight="semibold")
-        running += v
+    # cumulative bar start positions + x-span (for label padding)
+    starts, running, xs = [], base, [base]
+    for _, v in items:
+        starts.append(running); running += v; xs.append(running)
+    pad = (max(xs) - min(xs)) * 0.02 or 100.0
+    for i, ((k, v), start) in enumerate(zip(items, starts)):
+        end = start + v
+        ax.barh(i, v, left=start, color=(VERMILLION if v > 0 else BLUE), edgecolor="white")
+        # label placed just OUTSIDE the bar end in dark text -> always readable
+        if v >= 0:
+            ax.text(end + pad, i, f"+${v:,.0f}", ha="left", va="center",
+                    fontsize=8, color=NAVY, fontweight="semibold")
+        else:
+            ax.text(end - pad, i, f"-${abs(v):,.0f}", ha="right", va="center",
+                    fontsize=8, color=NAVY, fontweight="semibold")
     ax.set_yticks(range(len(items)))
     ax.set_yticklabels([k for k, _ in items], fontsize=9)
     ax.invert_yaxis()
@@ -59,7 +68,11 @@ def waterfall(ax, contribs, predicted, actual, title):
     ax.set_title(f"{title}\nactual \\${actual:,.0f}  |  predicted \\${predicted:,.0f}",
                  loc="left", fontsize=10.5)
     ax.set_xlabel("charges (USD)", fontsize=9)
-    ax.margins(x=0.10)
+    # asymmetric x-limits: extra room on the left so left-ending bar labels
+    # sit in open space rather than colliding with the y-axis feature names
+    lo, hi = min(xs), max(xs)
+    span = (hi - lo) or 1.0
+    ax.set_xlim(lo - 0.30 * span, hi + 0.16 * span)
 
 print("=" * 70); print("CHUNK 29 — INDIVIDUAL PREDICTION EXPLANATIONS"); print("=" * 70)
 print(f"Model base value (avg prediction): ${base:,.0f}\n")
